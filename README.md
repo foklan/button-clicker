@@ -1,4 +1,13 @@
 # button-clicker
+The program to click on places defined by the user using keyboard shortcuts
+
+### tested with:  
+```
+python 3.8.10  
+mouse 0.7.1  
+pyautogui 0.9.53  
+keyboard 0.13.5  
+```
 
 ## Installation  
 ### Windows  
