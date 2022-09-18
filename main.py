@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 try:
 	import keyboard
-	import mouse
 	from time import sleep
 	import pyautogui
 	import config
 except Exception as error:
 	print(error)
 
-######################################################
 ######################################################
 
 # SHORTCUT BUTTONS CONFIG
@@ -24,7 +22,6 @@ shcut3 = config.shortcut3
 iter_sleep = config.iter_sleep 
 
 ######################################################
-######################################################
 
 buttons = {"button1": (), "button2": (), "button3": ()}
 
@@ -33,15 +30,15 @@ def init_keys():
 	keys_to_init = 3
 	while keys_to_init != 0:
 		if keyboard.is_pressed("b") and len(buttons['button1']) == 0 :
-			buttons['button1'] = mouse.get_position()
+			buttons['button1'] = pyautogui.position()
 			keys_to_init = keys_to_init - 1
 			print(f"button1 pos: {buttons['button1']}")
 		elif keyboard.is_pressed("s") and len(buttons['button2']) == 0 :
-			buttons['button2'] = mouse.get_position()
+			buttons['button2'] = pyautogui.position()
 			keys_to_init = keys_to_init - 1
 			print(f"button2 pos: {buttons['button2']}")
 		elif keyboard.is_pressed("f") and len(buttons['button3']) == 0:
-			buttons['button3'] = mouse.get_position()
+			buttons['button3'] = pyautogui.position()
 			keys_to_init = keys_to_init - 1
 			print(f"button3 pos: {buttons['button3']}")
 		sleep(0.1)
@@ -49,12 +46,12 @@ def init_keys():
 
 def click_button(pos):
 	# Get current mouse position
-	curr_pos = mouse.get_position()
+	curr_pos = pyautogui.position()
 	# Click on button
 	print(f"clicking {pos}")
 	pyautogui.click(pos[0], pos[1])
 	# Move mouse to previous position
-	mouse.move(curr_pos[0], curr_pos[1], absolute=True, duration=0.0001)
+	pyautogui.moveTo(curr_pos[0], curr_pos[1])
 
 if __name__ == "__main__":
 	init_keys()
