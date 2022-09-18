@@ -4,7 +4,6 @@ The program to click on places defined by the user using keyboard shortcuts
 ### tested with:  
 ```
 python 3.8.10  
-mouse 0.7.1  
 pyautogui 0.9.53  
 keyboard 0.13.5  
 ```
@@ -12,13 +11,13 @@ keyboard 0.13.5
 ## Installation  
 ### Windows  
 1. Install python libraries  
-`python3.exe -m pip install keyboard mouse pyautogui`  
+`python3.exe -m pip install keyboard pyautogui`  
 2. Start clicker as admin, open cmd as admin and run  
 `python3.exe main.py`  
   
 ### Linux
 1. Install python libraries  
-`sudo python3 -m pip install keyboard mouse pyautogui`  
+`sudo python3 -m pip install keyboard pyautogui`  
 2. Start clicker  
 `sudo python3 main.py`  
 
